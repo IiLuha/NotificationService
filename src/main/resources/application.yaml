@@ -1,1 +1,23 @@
-spring.application.name=NotificationService
+server:
+  port: 8081
+
+spring:
+  application.name: NotificationService
+  datasource:
+    url: jdbc:postgresql://localhost:5433/notification_service_repository
+    username: itdev
+    password: finalproj
+  jpa:
+    properties:
+      hibernate:
+        current_session_context_class: thread
+        hbm2ddl:
+          auto: update
+    open-in-view: false
+
+jwt:
+  secret-key: B44NQVBBEKIAMBKFPQMLZG2FKXA2NY2ZUDOBE5LC5FYN5WZUYJEA
+
+event-manager.url: http://localhost:8080
+
+event.stats.cron: "0 0 0 */1 * *"
